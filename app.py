@@ -38,7 +38,7 @@ def getGeneros():
     #Obteneniendo JSONs
     generos = fc.obtenerGeneros()
     return jsonify(generos)
-    
+
 @app.route("/generos/<id>")
 def getGenerosByCodigo(id):
     #Obteneniendo JSONs
@@ -187,3 +187,8 @@ def getUltimas10Peliculas():
         return jsonify('No hay peliculas')
     else:
         return jsonify(ultimas10Peliculas)
+
+@app.route("/pelicularandom")
+def getPeliculaRandom():
+    peliculas = fc.obtenerPeliculas()
+    return choice(peliculas)
