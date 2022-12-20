@@ -256,3 +256,49 @@ def getComentariosByUsuario(idUsuario):
             listaComentariosUsuario.append(comentario)
 
     return jsonify(listaComentariosUsuario)
+
+@app.route("/comentario/save", methods=['PUT'])
+def saveComentarios():
+    #Obteneniendo JSONs
+    comentarios = fc.obtenerComentarios()
+    
+    comentarioNuevoLista = request.get_json()
+
+    for comentario in comentarios:
+        if comentario['id'] == comentarioNuevoLista['id'] and comentario['idUsuario'] == comentarioNuevoLista['idUsuario']:
+            comentario['comentario'] = comentarioNuevoLista['comentario']
+
+    #Actulizando JSONs
+    with open('jsons/comentarios.json', 'w') as archivoJson:
+        json.dump(comentarios, archivoJson, indent=4)
+
+    return 'Modificacion con exito'
+
+@app.route("/comentario/<id>")
+def getComentariosById(id):
+    comentarios = fc.obtenerComentarios()
+
+    for comentario in comentarios:
+        if comentario['id'] == id:
+            return jsonify(comentario)
+
+@app.route("/peliculas/<idPelicula>/comentarios/")
+def getComentarios(idPelicula):
+    #Obteneniendo JSONs
+    comentarios = fc.obtenerComentarios()
+    peliculas = fc.obtenerPeliculas()
+
+    listaComentarios = []
+
+    for pelicula in peliculas:
+        if pelicula['id'] == idPelicula:
+            for comentarioRecorrido in pelicula["idComentarios"]:
+                for comentario in comentarios:
+                    if comentario['id'] == comentarioRecorrido:
+                        listaComentarios.append(comentario)
+                return jsonify(listaComentarios)
+
+    return Response("{}", status=HTTPStatus.NOT_FOUND)
+
+if __name__ == "__name__": 
+	app.run(debug = True, port=5000)
