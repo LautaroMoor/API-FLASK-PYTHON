@@ -1,0 +1,126 @@
+[
+    {
+        "id": "1",
+        "titulo": "Shrek",
+        "ano": "2005",
+        "idDirector": "2",
+        "idGenero": "1",
+        "sinopsis": "Un ogro divertido",
+        "imagen": "https://static.wikia.nocookie.net/shrek/images/7/7c/Shrek_Poster_02.jpg/revision/latest?cb=20190315035135&path-prefix=es",
+        "idComentarios": [
+            "1"
+        ]
+    },
+    {
+        "id": "2",
+        "titulo": "Muertos de risa",
+        "ano": "2001",
+        "idDirector": "1",
+        "idGenero": "1",
+        "sinopsis": "Mueren de risa",
+        "imagen": "https://static.wikia.nocookie.net/doblaje/images/6/66/Muertos-de-risa-poster.jpg/revision/latest?cb=20121102020611&path-prefix=es",
+        "idComentarios": [
+            "2"
+        ]
+    },
+    {
+        "id": "3",
+        "titulo": "No miren arriba",
+        "ano": "2001",
+        "idDirector": "1",
+        "idGenero": "2",
+        "sinopsis": "Cae un meteorito",
+        "imagen": "https://es.web.img2.acsta.net/pictures/21/11/29/17/20/1865984.jpg",
+        "idComentarios": []
+    },
+    {
+        "id": "4",
+        "titulo": "¡Nop!",
+        "ano": "2022",
+        "idDirector": "1",
+        "idGenero": "2",
+        "sinopsis": "Los cuidadores de un rancho de caballos de California se cruzan con una fuerza misteriosa que afecta el comportamiento humano y animal.",
+        "imagen": "https://www.lahiguera.net/cinemania/pelicula/10138/nop-cartel-10474.jpg",
+        "idComentarios": []
+    },
+    {
+        "id": "5",
+        "titulo": "Pinocchio",
+        "ano": "2022",
+        "idDirector": "1",
+        "idGenero": "2",
+        "sinopsis": "En Italia, el deseo de un hombre le da vida mágicamente a un muñeco de madera.",
+        "imagen": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRBTroKIU3vBzixwr-8F_ePdw5sqPLjRcf5t6Mj9hCU4wVUQV5e",
+        "idComentarios": []
+    },
+    {
+        "id": "6",
+        "titulo": "Troll",
+        "ano": "2022",
+        "idDirector": "1",
+        "idGenero": "2",
+        "sinopsis": "Cuando un antiguo trol se despierta en una montaña noruega, un grupo de héroes debe reunirse para intentar evitar que cause estragos mortales.",
+        "imagen": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRBueCAgagI6zkeI0gcl2T5WE6ZJuINzigkPDVVINRipwvV_9ed",
+        "idComentarios": []
+    },
+    {
+        "id": "7",
+        "titulo": "Smile",
+        "ano": "2022",
+        "idDirector": "2",
+        "idGenero": "2",
+        "sinopsis": "Tras presencia el dramático incidente sufrido por un paciente, la Dra. Cotter empieza a experimentar hechos aterradores sin explicación aparente. A medida que el horror se adueña de su vida, comprende que la respuesta está en su propio pasado.",
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9f1ZP1dA0pFAQNH-qABxjWsU9EZl4xogj8emwTNCVP2t3G2iv",
+        "idComentarios": []
+    },
+    {
+        "id": "8",
+        "titulo": "Tren Bala",
+        "ano": "2022",
+        "idDirector": "1",
+        "idGenero": "1",
+        "sinopsis": "En un tren de alta velocidad que se dirige de Tokio a Morioka, cinco asesinos profesionales descubren que van tras el mismo objetivo.",
+        "imagen": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTHrIPUMQFX9GD-MBs8s3lQXXu0B7t-nOW5xNDA5fNLv9o6QpAb",
+        "idComentarios": []
+    },
+    {
+        "id": "9",
+        "titulo": "Bardo",
+        "ano": "2022",
+        "idDirector": "2",
+        "idGenero": "2",
+        "sinopsis": "Un reputado periodista y documentalista mexicano regresa a su país, donde atraviesa una crisis existencial mientras se enfrenta a su identidad, a sus relaciones familiares y a la locura de sus recuerdos.",
+        "imagen": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTLKpgtJYyoBxrTjuY1GrtEaZkUNDnn0BvU5c-VBjK-QAAjjwfY",
+        "idComentarios": []
+    },
+    {
+        "id": "10",
+        "titulo": "El Hombre del Norte",
+        "ano": "2022",
+        "idDirector": "2",
+        "idGenero": "1",
+        "sinopsis": "El príncipe Amleth está a punto de convertirse en hombre pero, en ese momento, su tío asesina brutalmente a su padre y secuestra a la madre del niño. Dos décadas después, Amleth es un vikingo que tiene la misión de salvar a su madre.",
+        "imagen": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRX6TFM0GRN5pfrHC962kAJtNAKqzLJzK1Mef6Kul8nsKBc6KjS",
+        "idComentarios": []
+    },
+    {
+        "id": "11",
+        "titulo": "La Huérfana: el origen.",
+        "ano": "2022",
+        "idDirector": "1",
+        "idGenero": "2",
+        "sinopsis": "Después de escapar de un centro psiquiátrico en Estonia, Esther viaja a Estados Unidos haciéndose pasar por la hija desaparecida de una familia adinerada. Sin embargo, surge un giro inesperado que la enfrenta a una madre.",
+        "imagen": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQx85PLrg2E9c4W_o_wZgVKh-9UN2e1_70n0vVBNSk3m3qGMWxA",
+        "idComentarios": []
+    },
+    {
+        "id": "12",
+        "titulo": "Pequeños secretos",
+        "ano": "2022",
+        "idDirector": "1",
+        "idGenero": "1",
+        "sinopsis": "Un sheriff y un detective de homicidios colaboran para dar caza a un astuto asesino en Los Ángeles. Mientras rastrean al culpable, el pasado de uno de ellos comienza a salir a la luz y puede poner en peligro la investigación.",
+        "imagen": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSOfSTbLwWvGoThUl5cxjP966ECDxvEx9tektJL1XmOckxwc48e",
+        "idComentarios": []
+    }
+]
