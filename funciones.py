@@ -31,3 +31,10 @@ def obtenerGeneros():
 
 def obtenerComentarios():
     return comentarios
+
+#Nuevas ID
+def nuevaIdPeliculas():
+    return str(int(peliculas[-1]["id"]) + 1)
+
+def nuevoIdComentario():
+    return str(int(comentarios[-1]["id"]) + 1)

@@ -159,3 +159,31 @@ def deletePelicula(id, idUsuario):
         with open('jsons/comentarios.json', 'w') as archivoJson:
             json.dump(comentarios, archivoJson, indent=4)
         return 'Borrado exitoso'
+
+@app.route("/peliculas/<id>")
+def getPeliculaByCodigo(id):
+    #Obteneniendo JSONs
+    peliculas = fc.obtenerPeliculas()
+
+    for pelicula in peliculas:
+        if pelicula["id"] == id:
+            return jsonify(pelicula)
+    return Response("{}", status=HTTPStatus.NOT_FOUND)
+
+@app.route("/ultimasdiezpeliculas")
+def getUltimas10Peliculas():
+    #Obteneniendo JSONs
+    peliculas = fc.obtenerPeliculas()
+    ultimas10Peliculas = []
+    contador = 0
+
+    for pelicula in reversed(peliculas):
+        contador = contador + 1
+        ultimas10Peliculas.append(pelicula)
+        if contador == 10:
+            break
+
+    if len(ultimas10Peliculas) == 0:
+        return jsonify('No hay peliculas')
+    else:
+        return jsonify(ultimas10Peliculas)
