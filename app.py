@@ -192,3 +192,67 @@ def getUltimas10Peliculas():
 def getPeliculaRandom():
     peliculas = fc.obtenerPeliculas()
     return choice(peliculas)
+
+#ABM Comentarios
+@app.route("/comentario/create/idPelicula/<idPelicula>", methods=['POST'])
+def createComentarios(idPelicula):
+    #Obteneniendo JSONs
+    comentarios = fc.obtenerComentarios()
+    peliculas = fc.obtenerPeliculas()
+    id = fc.nuevoIdComentario()
+
+    comentarioNuevo = request.get_json()
+    comentarioNuevo["id"] = id
+    comentarios.append(comentarioNuevo)
+    
+    for pelicula in peliculas:
+        if pelicula['id'] == idPelicula:
+            pelicula['idComentarios'].append(id)
+
+    #Actulizando jsons
+    with open('jsons/comentarios.json', 'w') as archivoJson:
+        json.dump(comentarios, archivoJson, indent=4)
+    with open('jsons/peliculas.json', 'w') as archivoJson:
+        json.dump(peliculas, archivoJson, indent=4)
+
+    return 'Creacion de comentario exitosa'
+
+@app.route("/comentario/idUsuario/<idUsuario>/delete/<id>", methods=['DELETE'])
+def deleteComentarios(id,idUsuario):
+    #Obteneniendo JSONs
+    comentarios = fc.obtenerComentarios()
+    peliculas = fc.obtenerPeliculas()
+    borrado = False
+
+    for comentario in comentarios:
+        if comentario["idUsuario"] == idUsuario and comentario["id"] == id:
+            comentarios.remove(comentario)
+            for pelicula in peliculas:
+                for comentarioRecorrido in pelicula["idComentarios"]:
+                    if comentarioRecorrido == id:
+                        borrado = True
+                        pelicula["idComentarios"].remove(comentarioRecorrido)
+
+    #Actulizando JSONs
+    with open('jsons/comentarios.json', 'w') as archivoJson:
+        json.dump(comentarios, archivoJson, indent=4)
+    with open('jsons/peliculas.json', 'w') as archivoJson:
+        json.dump(peliculas, archivoJson, indent=4)
+
+    if borrado:
+        return 'Borrado con exito'
+    else:
+        return 'Borrado sin exito'
+
+@app.route("/comentario/idUsuario/<idUsuario>")
+def getComentariosByUsuario(idUsuario):
+    #Obteneniendo JSONs
+    comentarios = fc.obtenerComentarios()
+
+    listaComentariosUsuario = []
+
+    for comentario in comentarios:
+        if comentario["idUsuario"] == idUsuario:
+            listaComentariosUsuario.append(comentario)
+
+    return jsonify(listaComentariosUsuario)
