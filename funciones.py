@@ -15,3 +15,19 @@ with open ('jsons/generos.json','r',encoding="utf8") as archivoJson:
 
 with open ('jsons/comentarios.json','r',encoding="utf8") as archivoJson:
     comentarios = json.load(archivoJson)
+
+#Pasando a JSONs
+def obtenerUsuarios():
+    return usuarios
+
+def obtenerPeliculas():
+    return peliculas
+
+def obtenerDirectores():
+    return directores
+
+def obtenerGeneros():
+    return generos
+
+def obtenerComentarios():
+    return comentarios

@@ -38,3 +38,41 @@ def getGeneros():
     #Obteneniendo JSONs
     generos = fc.obtenerGeneros()
     return jsonify(generos)
+    
+@app.route("/generos/<id>")
+def getGenerosByCodigo(id):
+    #Obteneniendo JSONs
+    generos = fc.obtenerGeneros()
+    for genero in generos:
+        if genero['id'] == id:
+            return genero
+    return Response("{}", status=HTTPStatus.NOT_FOUND)
+
+@app.route("/peliculas/director/<id>")
+def getPeliculasByDirector(id):
+    #Obteneniendo JSONs
+    peliculas = fc.obtenerPeliculas()
+
+    peliculasByDirector = []
+
+    for pelicula in peliculas:
+        if pelicula["idDirector"] == id:
+            peliculasByDirector.append(pelicula)
+    if len(peliculasByDirector)==0:
+        return jsonify('Director no encontrado')
+    else:
+        return jsonify(peliculasByDirector)
+
+@app.route("/peliculas/imagen")
+def getPeliculasByPortada():
+    #Obteneniendo JSONs
+    peliculas = fc.obtenerPeliculas()
+
+    peliculasByPortada = []
+    for pelicula in peliculas:
+        if pelicula["imagen"] != '':
+            peliculasByPortada.append(pelicula)
+    if len(peliculasByPortada)==0:
+        return jsonify("Peliculas con portada no encontradas")
+    else:
+        return jsonify(peliculasByPortada)
